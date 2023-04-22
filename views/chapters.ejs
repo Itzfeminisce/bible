@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel='stylesheet' href='/stylesheets/style.min.css' />
+
+<title><%= title %></title>
+</head>
+
+<body class="p-5 bg-slate-100">
+<h1 class="text-4xl font-bold">Chapters</h1>
+
+
+<div class="bg-white p-5 m-auto">
+
+<h1 class="my-5 text-2xl flex items-center justify-between">
+<span><%- book %></span>
+<span>
+
+<span class="text-gray-300"> ?</span>
+:
+<span class="text-gray-300">?</span>
+
+</span>
+</h1>
+
+
+
+<div class="grid grid-cols-5 gap-3">
+<% for (let i = 1; i <= totalChapters; i++) {
+%>
+
+<div class="bg-slate-100 shadow-md p-3">
+<a href="/verses?book=<%- book %>&chapter=<%- i %>"><%= i %></a>
+</div>
+<%
+} %>
+</div>
+</div>
+
+</body>
+</html>
