@@ -15,7 +15,7 @@ router.get('/', async function(req, res) {
    //console.log(books.length)
    const bk = books.filter(obj=>{
     // console.log(Object.keys(obj))
-     return obj.book.startsWith(id.toUpperCase())
+     return obj.book == id?.trim().toUpperCase() || obj.book.includes(id?.trim().toUpperCase())
      })
      response.push(...bk)
  }

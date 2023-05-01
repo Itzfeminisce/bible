@@ -32,6 +32,9 @@ router.get('/', async function(req, res, next) {
  
  const data = await getData('new')
  const response = getRandom(data)
+ if(req.query.ajax){
+   return res.json(response)
+ }
   res.render('index', { title: '23rd Generation Bible', data: response});
 });
 

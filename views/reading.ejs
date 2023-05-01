@@ -31,9 +31,9 @@
   <div class="">
   <% for(let verse of read){ %>
 
-   <div id="page-<%-verse.verse %>" class="my-5 p-3 bg-slate-200">
+   <div data-scripture id="page-<%-verse.verse %>" class="my-5 pt-3 pb-0 bg-slate-200">
      
-     <div class="w-full mb-3 text-sm text-slate-500 flex justify-between items-center">
+     <div class="w-full px-3 mb-3 text-sm text-slate-500 flex justify-between items-center">
          <p>
            <%- bookName %> <%- chapter %>
          </p>
@@ -41,12 +41,19 @@
     </div>
     
     
-<p class="text-xl font-light line-5"><%- verse.text %></p>
+<p class="p-3 text-xl font-light line-5"><%- verse.text %></p>
+<div class="px-3 mt-5 bg-black/50 text-white text-light text-xs flex justify-between items-center verse-action">
+  <button data-verse-action="share">Save</button>
+  <button data-verse-action="highlight">Highlight</button>
+  <button data-verse-action="bold">Bold</button>
+  <button data-verse-action="share">Share</button>
+</div>
    </div>
   <% } %>
   </div>
   </div>
-  
+ 
+ <%- include('./includes/footer') %> 
 </body>
 </html>
 

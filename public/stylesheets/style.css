@@ -5,5 +5,18 @@
 @layer base{
   html{
     @apply scroll-smooth;
+    user-select: none;
+  }
+}
+@layer components {
+  .sidebar-toggler{
+    @apply max-w-[30%] flex flex-col items-center self-start;
+  }
+  .sidebar-toggler span{
+    background-color: blue;
+    @apply w-full h-2 mb-1;
+  }
+  .verse-action button {
+    @apply active:bg-pink-500 active:text-white p-3 font-bold;
   }
 }
