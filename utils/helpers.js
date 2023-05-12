@@ -13,8 +13,8 @@ async function getData(name, chunkCount=10){
 const {default:nodefetch} = await import('node-fetch')
 //const meta = new Headers({'Content-Type':'application/json'})
 //const host = new URL()
-//console.log(host)
-let data = await nodefetch(`/bible/${name}.json`)
+//console.log(process.env.HOST)
+let data = await nodefetch(`${process.env.HOST}/bible/${name}.json`)
 return chunk(chunkCount, await data.json())
 }
 
