@@ -12,7 +12,9 @@ function chunk(n, data) {
 async function getData(name, chunkCount=10){
 const {default:nodefetch} = await import('node-fetch')
 //const meta = new Headers({'Content-Type':'application/json'})
-let data = await nodefetch(`http://localhost:3000/bible/${name}.json`)
+//const host = new URL()
+//console.log(host)
+let data = await nodefetch(`/bible/${name}.json`)
 return chunk(chunkCount, await data.json())
 }
 
